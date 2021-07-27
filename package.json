@@ -1,0 +1,29 @@
+{
+  "name": "url-shortener-complete",
+  "version": "1.0.0",
+  "description": "This is a url shortener service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuramochi-coder/url-shortener-complete.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuramochi-coder/url-shortener-complete/issues"
+  },
+  "homepage": "https://github.com/kuramochi-coder/url-shortener-complete#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "mongoose": "^5.13.3",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
+  }
+}
