@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<%# Edit Page Main %> 
+<body>
+    <div class="container">
+    <h1>My TinyURL</h1>
+    <%# Create ShorUrl %> 
+    <form action="/api/shortUrls" method="POST" class="my-4 form-inline">
+      <div class="container row">
+      <label for="fullUrl">Enter a long URL to make a TinyURL</label>
+      </div>
+      <div>
+      <input required type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+      </div>
+      <div class="container row">
+      <label for="shortUrl">Customize your link</label>
+      </div>
+      <div>
+      <input placeholder="enter alias" type="text" name="shortUrl" id="shortUrl" class="form-control col mr-2">
+      </div>
+      <button class="btn btn-success" type="submit">Make TinyURL</button>
+    </form>
+    <%# /Create ShorUrl %>
+</body>
+<%# /Edit Page Main %>
+
+</html>
