@@ -1,0 +1,27 @@
+<table class="table table-striped table-responsive">
+      <thead>
+        <tr>
+          <th>Full URL</th>
+          <th>Short URL</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (locals.allUrls) { %>
+         <% allUrls.forEach(eachUrl => { %>
+          <tr>
+            <td><a href="<%= eachUrl.full %>"><%= eachUrl.full %></a></td>
+            <td><a href="<%= eachUrl.short %>"><%= eachUrl.short %></a></td>
+            <td>
+              <a href="/edit_url?id=<%= eachUrl._id %> " class="btn">
+                <span><i class="fas fa-pencil-alt"></i></span>
+              </a>
+              <a class="btn delete" data-id=<%= eachUrl._id %> >
+                <span><i class="fas fa-dumpster"></i></span>
+              </a>
+            </td>
+          </tr>
+          <% }) %>
+        <% } %>
+      </tbody>
+</table>

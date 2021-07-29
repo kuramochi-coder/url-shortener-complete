@@ -1,0 +1,19 @@
+<form action="/api/urls/update" method="POST" class="my-4 form-inline" id="update">
+      <div class="container row">
+      <label for="fullUrl">Edit long URL</label>
+      </div>
+      <div>
+       <input type="hidden" name="_id" value="<%= singleUrl._id %>">
+      <input required type="url" name="full" id="full" class="form-control col mr-2" value="<%= singleUrl.full %>"> 
+      </div>
+      <div class="container row">
+      <label for="shortUrl">Edit short URL</label>
+      </div>
+      <div>
+      <input placeholder="enter alias" type="text" name="short" id="short" class="form-control col mr-2" value="<%= singleUrl.short %>">
+      </div>
+      <button class="btn btn-success" type="submit">Save Edited TinyURL</button>
+      <a href="/">
+      <button class="btn btn-danger" type="button">Cancel</button>
+      </a>
+</form>

@@ -7,8 +7,11 @@ const db = config.mongoURI;
 
 const app = express();
 
+// Load assets
+app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
+app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
+
 // Initialize express for json and urlencoded
-app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -26,7 +29,7 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 // Routes
-const appRouter = require("./src/routes/urlRoutes");
+const appRouter = require("./src/routes/router");
 
 app.use("/", appRouter);
 
