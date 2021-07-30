@@ -1,5 +1,4 @@
 const assert = require("chai").assert;
-const ShortUrl = require("../models/url.model");
 const testUrl = "https://www.amazon.com/";
 
 const axios = require("axios");
