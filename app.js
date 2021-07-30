@@ -1,5 +1,4 @@
 const express = require("express");
-const validUrl = require("valid-url");
 const mongoose = require("mongoose");
 const path = require("path");
 const config = require("./config/default.json");
