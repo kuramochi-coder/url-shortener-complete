@@ -3,7 +3,6 @@ const ShortUrl = require("../../models/url.model");
 // create new short url
 exports.create = async (req, res, next) => {
   try {
-    console.log(req.body.full);
     const existingFullUrl = await ShortUrl.findOne({
       full: req.body.full,
     });
