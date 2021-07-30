@@ -9,52 +9,61 @@ const baseUrl = config.baseUrl;
 describe("Url APIs", () => {
   describe("GET /api/urls", () => {
     it("Should GET all the urls", () => {
-      axios.get(`${baseUrl}/api/urls`).then((res, data) => {
-        assert.equal(res, "200");
-        assert.typeOf(data, "array");
-        assert.isAbove(data.length, 1);
-        assert.notEqual(data, undefined);
+      axios.get(`${baseUrl}/api/urls`).then((response) => {
+        assert.equal(response.status, "200");
+        assert.typeOf(response.data, "array");
+        assert.isAbove(response.data.length, 1);
       });
     });
   });
 
   describe("POST /api/urls", () => {
     it("Should POST test url", () => {
-      axios.post(`${baseUrl}/api/urls`, { full: testUrl }).then((res, data) => {
-        assert.equal(res, "200");
-        assert.notEqual(data, undefined);
+      axios.post(`${baseUrl}/api/urls`, { full: testUrl }).then((response) => {
+        assert.equal(response.status, "200");
+        assert.notEqual(response.data, undefined);
       });
     });
   });
 
   describe("POST /api/urls/update", () => {
     it("Should UPDATE test url", () => {
-      const testUrlObj = ShortUrl.findOne({ full: testUrl });
-
-      axios
-        .post(`${baseUrl}/api/urls/update`, {
-          _id: testUrlObj._id,
-          short: "test",
-        })
-        .then((res, data) => {
-          assert.equal(res, "200");
-          assert.notEqual(data, undefined);
-        });
+      axios.get(`${baseUrl}/api/urls`).then((response) => {
+        // console.log(response.data);
+        if (response.data) {
+          response.data.map((urldata) => {
+            if (urldata.full == testUrl) {
+              axios
+                .post(`${baseUrl}/api/urls/update`, {
+                  _id: urldata._id,
+                  short: "test",
+                })
+                .then((response) => {
+                  assert.equal(response.status, "200");
+                });
+            }
+          });
+        }
+      });
     });
   });
 
   describe("DELETE /api/urls/:id", () => {
-    it("Should DELETE test url"),
-      () => {
-        testUrlObj = ShortUrl.findOne({ full: testUrl });
-
-        console.log(testUrlObj);
-        const id = testUrlObj._id;
-
-        axios.delete(`${baseUrl}/api/urls/${id}`).then((res, data) => {
-          assert.equal(res, "200");
-          assert.notEqual(data, undefined);
-        });
-      };
+    it("Should DELETE test url", () => {
+      axios.get(`${baseUrl}/api/urls`).then((response) => {
+        // console.log(response.data);
+        if (response.data) {
+          response.data.map((urldata) => {
+            if (urldata.full == testUrl) {
+              axios
+                .delete(`${baseUrl}/api/urls/${urldata._id}`)
+                .then((response) => {
+                  assert.equal(response.status, "200");
+                });
+            }
+          });
+        }
+      });
+    });
   });
 });
