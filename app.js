@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const config = require("./config/default.json");
 const db = config.mongoURI;
+const favicon = require("serve-favicon");
 
 const app = express();
 

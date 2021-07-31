@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
     "mongoose": "^5.13.3",
+    "serve-favicon": "^2.5.0",
     "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
   },
