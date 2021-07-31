@@ -9,7 +9,7 @@ if (window.location.pathname == "/") {
 
     var request = {
       // url: `http://localhost:5000/api/urls/${id}`,
-      url: `https://my-tinyurl.herokuapp.com//api/urls/${id}`,
+      url: `https://my-tinyurl.herokuapp.com/api/urls/${id}`,
       method: "DELETE",
     };
 
