@@ -5,7 +5,7 @@ const ShortUrl = require("../../models/url.model");
 
 exports.homeRoutes = async (req, res) => {
   axios
-    .get(`${req.hostname}/api/urls`)
+    .get(`${baseUrl}/api/urls`)
     .then((response) => {
       res.render("index", { allUrls: response.data });
     })
@@ -16,7 +16,7 @@ exports.homeRoutes = async (req, res) => {
 
 exports.edit_url = (req, res) => {
   axios
-    .get(`${req.hostname}/api/urls`, { params: { id: req.query.id } })
+    .get(`${baseUrl}/api/urls`, { params: { id: req.query.id } })
     .then((urldata) => {
       res.render("edit_url", { singleUrl: urldata.data });
     })

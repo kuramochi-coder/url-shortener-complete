@@ -8,7 +8,7 @@ const baseUrl = config.baseUrl;
 describe("Url APIs", () => {
   describe("GET /api/urls", () => {
     it("Should GET all the urls", () => {
-      axios.get(`${req.hostname}/api/urls`).then((response) => {
+      axios.get(`${baseUrl}/api/urls`).then((response) => {
         assert.equal(response.status, "200");
         assert.typeOf(response.data, "array");
         assert.isAbove(response.data.length, 1);
@@ -18,24 +18,22 @@ describe("Url APIs", () => {
 
   describe("POST /api/urls", () => {
     it("Should POST test url", () => {
-      axios
-        .post(`${req.hostname}/api/urls`, { full: testUrl })
-        .then((response) => {
-          assert.equal(response.status, "200");
-          assert.notEqual(response.data, undefined);
-        });
+      axios.post(`${baseUrl}/api/urls`, { full: testUrl }).then((response) => {
+        assert.equal(response.status, "200");
+        assert.notEqual(response.data, undefined);
+      });
     });
   });
 
   describe("POST /api/urls/update", () => {
     it("Should UPDATE test url", () => {
-      axios.get(`${req.hostname}/api/urls`).then((response) => {
+      axios.get(`${baseUrl}/api/urls`).then((response) => {
         // console.log(response.data);
         if (response.data) {
           response.data.map((urldata) => {
             if (urldata.full == testUrl) {
               axios
-                .post(`${req.hostname}/api/urls/update`, {
+                .post(`${baseUrl}/api/urls/update`, {
                   _id: urldata._id,
                   short: "test",
                 })
@@ -51,13 +49,13 @@ describe("Url APIs", () => {
 
   describe("DELETE /api/urls/:id", () => {
     it("Should DELETE test url", () => {
-      axios.get(`${req.hostname}/api/urls`).then((response) => {
+      axios.get(`${baseUrl}/api/urls`).then((response) => {
         // console.log(response.data);
         if (response.data) {
           response.data.map((urldata) => {
             if (urldata.full == testUrl) {
               axios
-                .delete(`${req.hostname}/api/urls/${urldata._id}`)
+                .delete(`${baseUrl}/api/urls/${urldata._id}`)
                 .then((response) => {
                   assert.equal(response.status, "200");
                 });
