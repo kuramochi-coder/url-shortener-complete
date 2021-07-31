@@ -8,7 +8,7 @@ if (window.location.pathname == "/") {
     var id = $(this).attr("data-id");
 
     var request = {
-      url: `http://localhost:5000/api/urls/${id}`,
+      url: `${req.hostname}/api/urls/${id}`,
       method: "DELETE",
     };
 
