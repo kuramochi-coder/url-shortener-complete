@@ -10,7 +10,7 @@ const app = express();
 // Load assets
 app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
-app.use(favicon(path.join(__dirname, "assets", "image", "favicon.png")));
+app.use(favicon(path.join(__dirname, "assets", "image", "favicon.ico")));
 
 // Initialize express for json and urlencoded
 app.use(express.json());
