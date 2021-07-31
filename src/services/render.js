@@ -25,7 +25,7 @@ exports.edit_url = (req, res) => {
     });
 };
 
-exports.shortUrlRoutes = async (req, res) => {
+exports.shortUrlReRoutes = async (req, res) => {
   try {
     const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl });
 

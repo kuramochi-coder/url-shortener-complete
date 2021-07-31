@@ -9,7 +9,7 @@ appRouter.get("/", services.homeRoutes);
 appRouter.get("/edit_url", services.edit_url);
 
 // redirect shorturl to fullurl
-appRouter.get("/:shortUrl/", services.shortUrlRoutes);
+appRouter.get("/:shortUrl/", services.shortUrlReRoutes);
 
 // APIs
 appRouter.post("/api/urls", controller.create);
