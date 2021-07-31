@@ -1,4 +1,4 @@
 {
     "mongoURI": "mongodb+srv://raphaelkw:raphaelkw@cluster0.qo3nr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "baseUrl": "https://my-tinyurl.herokuapp.com"
+    "baseUrl": "http://localhost:5000"
 }
