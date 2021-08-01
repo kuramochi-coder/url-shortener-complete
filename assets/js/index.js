@@ -1,10 +1,6 @@
-$("#update").submit(function (event) {
-  alert("Data Updated Successfully!");
-});
-
 if (window.location.pathname == "/") {
   $ondelete = $(".table tbody td a.delete");
-  $ondelete.click(function () {
+  $ondelete.click(() => {
     var id = $(this).attr("data-id");
 
     var request = {
@@ -14,7 +10,7 @@ if (window.location.pathname == "/") {
     };
 
     if (confirm("Delete url record?")) {
-      $.ajax(request).done(function (response) {
+      $.ajax(request).done((response) => {
         alert("Data Deleted Successfully!");
         location.reload();
       });
