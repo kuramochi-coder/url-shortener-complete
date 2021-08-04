@@ -18,7 +18,7 @@
 //   });
 // }
 
-const deleteHandeler = (element) => {
+const deleteHandler = (element) => {
   id = $(element).attr("data")
   
   var request = {
