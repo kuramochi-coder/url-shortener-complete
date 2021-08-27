@@ -5,11 +5,12 @@ const shortUrlSchema = new mongoose.Schema({
   full: {
     type: String,
     required: true,
-    unique: true,
+    unique: false,
   },
   short: {
     type: String,
     required: true,
+    unique: true,
     default: shortId.generate,
   },
 });

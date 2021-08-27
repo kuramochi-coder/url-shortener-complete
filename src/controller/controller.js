@@ -3,11 +3,14 @@ const ShortUrl = require("../../models/url.model");
 // create new short url
 exports.create = async (req, res, next) => {
   try {
-    const existingFullUrl = await ShortUrl.findOne({
-      full: req.body.full,
+    const existingShortUrl = await ShortUrl.findOne({
+      short: req.body.short,
     });
-    if (existingFullUrl) {
+    if (existingShortUrl) {
       //   pass
+      res.send(
+        "<script> alert('Short URL is already present, please use another or edit existing'); window.location = '/'; </script>"
+      );
     } else {
       if (req.body.short) {
         // if there is a custom input for short url name we will use it
