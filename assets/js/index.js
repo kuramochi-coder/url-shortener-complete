@@ -34,6 +34,20 @@ const clearSearchHandler = () => {
   });
 };
 
+const copyHandler = (element) => {
+  shorturl = "https://my-tinyurl.herokuapp.com/" + $(element).attr("data");
+
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val(shorturl).select();
+  document.execCommand("copy");
+  $temp.remove();
+
+  $(".alert").fadeIn(500, () => {
+    $(".alert").fadeOut();
+  });
+};
+
 const deleteHandler = (element) => {
   id = $(element).attr("data");
 
