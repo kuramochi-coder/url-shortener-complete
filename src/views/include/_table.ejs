@@ -4,6 +4,7 @@
         <tr>
           <th>Full URL</th>
           <th>Short URL</th>
+          <th>Clicks</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -13,6 +14,7 @@
           <tr>
             <td><a href="<%= eachUrl.full %>"><%= eachUrl.full %></a></td>
             <td><a href="<%= eachUrl.short %>"><%= eachUrl.short %></a></td>
+            <td><a><%= eachUrl.clicks %></a></td>
             <td>
               <a class="btn copy">
                 <span><i onclick="copyHandler(this)" data="<%= eachUrl.short %>" class="fas fa-copy"></i></span>

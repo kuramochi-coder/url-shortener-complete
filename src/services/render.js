@@ -30,6 +30,8 @@ exports.shortUrlReRoutes = async (req, res) => {
     const shortUrl = await ShortUrl.findOne({ short: req.params.shortUrl });
 
     if (shortUrl) {
+      shortUrl.clicks++;
+      shortUrl.save();
       return res.redirect(shortUrl.full);
     } else {
       return res.status(404).json("No url found");
