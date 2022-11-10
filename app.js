@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const config = require("./config/default.json");
+const config = require("./config/config");
 const db = config.mongoURI;
 const favicon = require("serve-favicon");
 

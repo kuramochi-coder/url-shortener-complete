@@ -1,5 +1,5 @@
 const axios = require("axios");
-const config = require("../../config/default.json");
+const config = require("../../config/config");
 const baseUrl = config.baseUrl;
 const ShortUrl = require("../../models/url.model");
 

@@ -2,7 +2,7 @@ const assert = require("chai").assert;
 const testUrl = "https://www.amazon.com/";
 
 const axios = require("axios");
-const config = require("../config/default.json");
+const config = require("../config/config");
 const baseUrl = config.baseUrl;
 
 describe("Url APIs", () => {
