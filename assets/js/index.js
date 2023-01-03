@@ -52,7 +52,7 @@ const deleteHandler = (element) => {
   id = $(element).attr("data");
 
   var request = {
-    // url: `http://localhost:5000/api/urls/${id}`,
+    // url: `http://localhost:8080/api/urls/${id}`,
     url: `https://my-tinyurl.herokuapp.com/api/urls/${id}`,
     method: "DELETE",
   };

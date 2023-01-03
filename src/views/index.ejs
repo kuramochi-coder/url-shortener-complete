@@ -1,33 +1,34 @@
 <!-- include header -->
-    <%- include('include/_header') %>
+<%- include('include/_header') %>
 <!-- /include header -->
 
-<%# Main Body %> 
+<%# Main Body %>
 <body>
   <div class="container">
-    <h1>My TinyURL</h1>
-
-    <%# Create ShorUrl %> 
-       <!-- include create_short -->
-        <%- include('include/_create_short') %>
+    <div class="row">
+      <h1>My TinyURL</h1>
+    </div>
+    <div class="row">
+      <%# Create ShorUrl %>
+      <!-- include create_short -->
+      <%- include('include/_create_short') %>
       <!-- /include create_short -->
-    <%# /Create ShorUrl %>
-   
-    <%# Search Display %> 
+      <%# /Create ShorUrl %> <%# Search Display %>
+    </div>
+    <div class="row mb-3">
       <!-- include search -->
       <%- include('include/_search') %>
       <!-- /include search -->
-    <%# /Search Display %>
-
-    <%# Table Display %> 
+      <%# /Search Display %> <%# Table Display %>
+    </div>
+    <div class="row">
       <!-- include table -->
-        <%- include('include/_table') %>
+      <%- include('include/_table') %>
       <!-- /include table -->
-    <%# /Table Display %>
-
+      <%# /Table Display %>
+    </div>
   </div>
-
- <!-- include footer -->
-<%- include('include/_footer') %>
-<!-- /include footer -->
-
+  <!-- include footer -->
+  <%- include('include/_footer') %>
+  <!-- /include footer -->
+</body>
