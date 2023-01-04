@@ -4,6 +4,7 @@ const path = require("path");
 const config = require("./config/config");
 const db = config.mongoURI;
 const favicon = require("serve-favicon");
+require("dotenv").config();
 
 const app = express();
 
@@ -35,8 +36,8 @@ const appRouter = require("./src/routes/router");
 
 app.use("/", appRouter);
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 
-app.listen(process.env.PORT || PORT, () =>
-  console.log(`Server running on port ${process.env.PORT} or ${PORT}`)
+app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT} & env is ${process.env.ENV}`)
 );

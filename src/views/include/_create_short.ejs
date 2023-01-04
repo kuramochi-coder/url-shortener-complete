@@ -1,17 +1,32 @@
 <div class="col-lg-6">
-<form action="/api/urls" method="POST" class="my-4 form-inline" id="create">
-      <div class="container row">
-        <label for="fullUrl">Enter a long URL to make a TinyURL</label>
-      </div>
+  <form action="/api/urls" method="POST" class="my-4 form-inline" id="create">
+    <div class="row">
+      <label for="fullUrl">Enter a long URL to make a TinyURL</label>
+
       <div>
-        <input required type="url" name="full" id="full" class="form-control col mr-2">
+        <input
+          required
+          type="url"
+          name="full"
+          id="full"
+          class="form-control col mb-2"
+        />
       </div>
-      <div class="container row">
-        <label for="shortUrl">Customize your link</label>
-      </div>
+    </div>
+    <div class="row">
+      <label for="shortUrl">Customize your link</label>
+
       <div>
-        <input placeholder="enter alias" type="text" name="short" id="short" class="form-control col mr-2">
+        <input
+          placeholder="enter alias"
+          type="text"
+          name="short"
+          id="short"
+          class="form-control col mr-2"
+        />
+
+        <button class="btn btn-success mt-1" type="submit">Make TinyURL</button>
       </div>
-      <button class="btn btn-success" type="submit">Make TinyURL</button>
-</form>
+    </div>
+  </form>
 </div>
