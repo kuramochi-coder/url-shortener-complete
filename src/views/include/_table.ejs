@@ -18,13 +18,13 @@
             <td><a><%= eachUrl.clicks %></a></td>
             <td>
               <a class="btn copy">
-                <span><i onclick="copyHandler(this)" data="<%= eachUrl.short %>" class="fas fa-copy"></i></span>
+                <span><i onclick="copyHandler(this)" data="<%= eachUrl.short %>" url="<%= baseUrl %>" class="fas fa-copy"></i></span>
               </a>
               <a href="/edit_url?id=<%= eachUrl._id %> " class="btn">
                 <span><i class="fas fa-pencil-alt"></i></span>
               </a>
               <a class="btn delete" data-id=<%= eachUrl._id %> >
-                <span><i onclick="deleteHandler(this)" data="<%= eachUrl._id %>" class="fas fa-trash"></i></span>
+                <span><i onclick="deleteHandler(this)" data="<%= eachUrl._id %>" url="<%= baseUrl %>" class="fas fa-trash"></i></span>
               </a>
             </td>
           </tr>

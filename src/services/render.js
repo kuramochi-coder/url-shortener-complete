@@ -7,7 +7,7 @@ exports.homeRoutes = async (req, res) => {
   axios
     .get(`${baseUrl}/api/urls`)
     .then((response) => {
-      res.render("index", { allUrls: response.data });
+      res.render("index", { allUrls: response.data, baseUrl: baseUrl });
     })
     .catch((err) => {
       res.send(err);

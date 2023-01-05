@@ -1,23 +1,3 @@
-// if (window.location.pathname == "/") {
-//   $ondelete = $(".table tbody td a.delete");
-//   $ondelete.click(() => {
-//     var id = $(this).attr("data-id");
-
-//     var request = {
-//       // url: `http://localhost:5000/api/urls/${id}`,
-//       url: `https://my-tinyurl.herokuapp.com/api/urls/${id}`,
-//       method: "DELETE",
-//     };
-
-//     if (confirm("Delete url record?")) {
-//       $.ajax(request).done((response) => {
-//         alert("Data Deleted Successfully!");
-//         location.reload();
-//       });
-//     }
-//   });
-// }
-
 const searchHandler = (element) => {
   value = $(element).val().toLowerCase();
 
@@ -35,7 +15,8 @@ const clearSearchHandler = () => {
 };
 
 const copyHandler = (element) => {
-  shorturl = "https://my-tinyurl.herokuapp.com/" + $(element).attr("data");
+  const baseUrl = $(element).attr("url");
+  let shorturl = baseUrl + "/" + $(element).attr("data");
 
   var $temp = $("<input>");
   $("body").append($temp);
@@ -49,11 +30,11 @@ const copyHandler = (element) => {
 };
 
 const deleteHandler = (element) => {
-  id = $(element).attr("data");
+  const id = $(element).attr("data");
+  const baseUrl = $(element).attr("url");
 
   var request = {
-    // url: `http://localhost:8080/api/urls/${id}`,
-    url: `https://my-tinyurl.herokuapp.com/api/urls/${id}`,
+    url: `${baseUrl}/api/urls/${id}`,
     method: "DELETE",
   };
 
